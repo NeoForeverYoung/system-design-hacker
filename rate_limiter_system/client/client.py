@@ -4,11 +4,13 @@
 import requests
 import time
 
+
 def send_request(client_id):
     url = "http://localhost:5000/api"
     params = {'client_id': client_id}
     response = requests.get(url, params=params)
     return response
+
 
 def simulate_requests(client_id, request_count):
     for _ in range(request_count):
@@ -19,8 +21,9 @@ def simulate_requests(client_id, request_count):
             print("Request throttled: Too Many Requests")
         time.sleep(1)  # Wait for 1 second between requests
 
+
 if __name__ == "__main__":
-    CLIENT_ID = "client_1"
+    CLIENT_ID = "client_2"
     REQUEST_COUNT = 20  # Number of requests to send
 
     simulate_requests(CLIENT_ID, REQUEST_COUNT)
